@@ -1,18 +1,13 @@
 package marsrover;
 
+import marsrover.direction.*;
+
 public class MarsRover {
 
 
     private Position position;
 
     private DirectionState currentState;
-    /*
-    private State currentState;
-    private State north = new NorthDirection();
-    private State south = ....;
-    private State east;
-    private State west;
-     */
 
     public MarsRover(int x, int y, String direction) {
 
@@ -20,6 +15,8 @@ public class MarsRover {
 
         if(direction.equals("N")) this.currentState = new NorthDirection(this);
         if(direction.equals("S")) this.currentState = new SouthDirection(this);
+        if(direction.equals("E")) this.currentState = new EastDirection(this);
+        if(direction.equals("W")) this.currentState = new WestDirection(this);
     }
 
     public void setPosition(Position position) {

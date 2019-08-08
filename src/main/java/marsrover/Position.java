@@ -16,8 +16,8 @@ public class Position {
         return new Position(x,y+modifier, direction);
     }
 
-    public Position subtractY(int modifier) {
-        return new Position(x,y-modifier, direction);
+    public Position addX(int modifier) {
+        return new Position(x+modifier,y, direction);
     }
 
     public Position setDirection(String direction) {

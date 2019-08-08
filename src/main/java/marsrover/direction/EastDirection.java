@@ -1,4 +1,6 @@
-package marsrover;
+package marsrover.direction;
+
+import marsrover.MarsRover;
 
 public class EastDirection implements DirectionState {
 
@@ -11,13 +13,16 @@ public class EastDirection implements DirectionState {
 
     @Override
     public DirectionState action(char command) {
-        if(command == 'M') {
-        }
 
         if(command == 'L') {
             return new NorthDirection(marsRover);
         }
 
-        return null;
+        if(command == 'R') {
+            return new SouthDirection(marsRover);
+        }
+
+        marsRover.setPosition(marsRover.getPosition().addX(1));
+        return new EastDirection(marsRover);
     }
 }
