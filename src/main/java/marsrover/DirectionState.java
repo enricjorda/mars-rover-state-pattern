@@ -1,5 +1,5 @@
 package marsrover;
 
 public interface DirectionState {
-    DirectionState action();
+    DirectionState action(char command);
 }

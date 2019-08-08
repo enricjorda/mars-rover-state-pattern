@@ -20,6 +20,10 @@ public class Position {
         return new Position(x,y-modifier, direction);
     }
 
+    public Position setDirection(String direction) {
+        return new Position(this.x,this.y, direction);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

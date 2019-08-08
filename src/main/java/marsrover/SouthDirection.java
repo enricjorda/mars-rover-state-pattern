@@ -6,10 +6,11 @@ public class SouthDirection implements DirectionState {
     public SouthDirection(MarsRover marsRover) {
 
         this.marsRover = marsRover;
+        this.marsRover.setPosition(marsRover.getPosition().setDirection("S"));
     }
 
     @Override
-    public DirectionState action() {
+    public DirectionState action(char command) {
 
         marsRover.setPosition(marsRover.getPosition().subtractY(1));
         return new SouthDirection(marsRover);

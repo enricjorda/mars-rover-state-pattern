@@ -33,9 +33,7 @@ public class MarsRover {
     public void doAction(String commands) {
 
         for (char command: commands.toCharArray()) {
-            if(command == 'M'){
-                this.currentState.action();
-            }
+            this.currentState = this.currentState.action(command);
         }
     }
 }
