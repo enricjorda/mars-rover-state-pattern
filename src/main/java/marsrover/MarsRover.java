@@ -1,11 +1,11 @@
 package marsrover;
 
-import java.util.Objects;
-
 public class MarsRover {
+
 
     private Position position;
 
+    private DirectionState currentState;
     /*
     private State currentState;
     private State north = new NorthDirection();
@@ -17,6 +17,12 @@ public class MarsRover {
     public MarsRover(int x, int y, String direction) {
 
         position = new Position(x,y,direction);
+
+        if(direction.equals("N")) this.currentState = new NorthDirection(this);
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
     }
 
     public Position getPosition() {
@@ -24,5 +30,7 @@ public class MarsRover {
     }
 
     public void doAction(String m) {
+
+        this.currentState.move();
     }
 }

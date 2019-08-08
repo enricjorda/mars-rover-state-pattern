@@ -12,6 +12,10 @@ public class Position {
         this.direction = direction;
     }
 
+    public Position addY(int modifier) {
+        return new Position(x,y+modifier, direction);
+    }
+
 
     @Override
     public boolean equals(Object o) {
