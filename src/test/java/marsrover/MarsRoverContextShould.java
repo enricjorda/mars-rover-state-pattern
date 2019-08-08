@@ -39,4 +39,13 @@ public class MarsRoverContextShould {
 
         assertEquals(new Position(3, 2, "S"), rover.getPosition());
     }
+
+    @Test
+    void turn_left_from_North() {
+
+        MarsRover rover = new MarsRover(3, 3, "N");
+        rover.doAction("L");
+
+        assertEquals(new Position(3, 3, "W"), rover.getPosition());
+    }
 }

@@ -9,7 +9,9 @@ public class SouthDirection implements DirectionState {
     }
 
     @Override
-    public void move() {
+    public DirectionState action() {
+
         marsRover.setPosition(marsRover.getPosition().subtractY(1));
+        return new SouthDirection(marsRover);
     }
 }
