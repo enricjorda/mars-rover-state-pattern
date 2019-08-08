@@ -19,7 +19,7 @@ public class NorthDirection implements DirectionState {
             return new WestDirection(marsRover);
         }
 
-        if(command == 'E') {
+        if(command == 'R') {
             return new EastDirection(marsRover);
         }
 

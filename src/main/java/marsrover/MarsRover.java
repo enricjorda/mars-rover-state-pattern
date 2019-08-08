@@ -4,7 +4,6 @@ import marsrover.direction.*;
 
 public class MarsRover {
 
-
     private Position position;
 
     private DirectionState currentState;
