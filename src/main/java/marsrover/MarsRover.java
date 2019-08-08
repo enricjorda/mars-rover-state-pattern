@@ -19,6 +19,7 @@ public class MarsRover {
         position = new Position(x,y,direction);
 
         if(direction.equals("N")) this.currentState = new NorthDirection(this);
+        if(direction.equals("S")) this.currentState = new SouthDirection(this);
     }
 
     public void setPosition(Position position) {
@@ -29,8 +30,12 @@ public class MarsRover {
         return position;
     }
 
-    public void doAction(String m) {
+    public void doAction(String commands) {
 
-        this.currentState.move();
+        for (char command: commands.toCharArray()) {
+            if(command == 'M'){
+                this.currentState.move();
+            }
+        }
     }
 }

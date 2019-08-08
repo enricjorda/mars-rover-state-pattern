@@ -16,6 +16,9 @@ public class Position {
         return new Position(x,y+modifier, direction);
     }
 
+    public Position subtractY(int modifier) {
+        return new Position(x,y-modifier, direction);
+    }
 
     @Override
     public boolean equals(Object o) {
