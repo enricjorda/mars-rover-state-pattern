@@ -2,28 +2,28 @@ package marsrover.direction;
 
 import marsrover.MarsRover;
 
-public class WestDirection implements DirectionState {
+public class WestState implements State {
 
     private final MarsRover marsRover;
 
-    public WestDirection(MarsRover marsRover) {
+    public WestState(MarsRover marsRover) {
         this.marsRover = marsRover;
         this.marsRover.setPosition(marsRover.getPosition().setDirection("W"));
     }
 
     @Override
-    public DirectionState action(char command) {
+    public State action(char command) {
 
         if(command == 'L') {
-            return new SouthDirection(marsRover);
+            return new SouthState(marsRover);
         }
 
         if(command == 'R') {
-            return new NorthDirection(marsRover);
+            return new NorthState(marsRover);
         }
 
         marsRover.setPosition(marsRover.getPosition().addX(-1));
-        return new WestDirection(marsRover);
+        return new WestState(marsRover);
 
     }
 }

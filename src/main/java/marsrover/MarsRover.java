@@ -6,16 +6,13 @@ public class MarsRover {
 
     private Position position;
 
-    private DirectionState currentState;
+    private State currentState;
 
     public MarsRover(int x, int y, String direction) {
 
         position = new Position(x,y,direction);
-
-        if(direction.equals("N")) this.currentState = new NorthDirection(this);
-        if(direction.equals("S")) this.currentState = new SouthDirection(this);
-        if(direction.equals("E")) this.currentState = new EastDirection(this);
-        if(direction.equals("W")) this.currentState = new WestDirection(this);
+        this.currentState = new LandingState(this);
+        this.currentState = this.currentState.action(direction.charAt(0));
     }
 
     public void setPosition(Position position) {
