@@ -12,7 +12,7 @@ public class WestState implements State {
     }
 
     @Override
-    public State action(char command) {
+    public State execute(char command) {
 
         if(command == 'L') {
             return new SouthState(marsRover);

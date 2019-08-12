@@ -11,7 +11,7 @@ public class LandingState implements State {
     }
 
     @Override
-    public State action(char direction) {
+    public State execute(char direction) {
 
         if(direction == 'N') return new NorthState(this.marsRover);
         if(direction == 'S') return new SouthState(this.marsRover);

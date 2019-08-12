@@ -1,5 +1,5 @@
 package marsrover.direction;
 
 public interface State {
-    State action(char command);
+    State execute(char command);
 }

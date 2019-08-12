@@ -12,7 +12,7 @@ public class MarsRover {
 
         position = new Position(x,y,direction);
         this.currentState = new LandingState(this);
-        this.currentState = this.currentState.action(direction.charAt(0));
+        this.currentState = this.currentState.execute(direction.charAt(0));
     }
 
     public void setPosition(Position position) {
@@ -26,7 +26,7 @@ public class MarsRover {
     public void doAction(String commands) {
 
         for (char command: commands.toCharArray()) {
-            this.currentState = this.currentState.action(command);
+            this.currentState = this.currentState.execute(command);
         }
     }
 }
